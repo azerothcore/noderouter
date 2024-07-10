@@ -28,6 +28,8 @@ services:
     restart: always
     command: bash -c "npm run prepare && npm run start:client"
     working_dir: /usr/src/service
+    depends_on:
+      - node-router
     volumes:
       - type: bind
         source: .
